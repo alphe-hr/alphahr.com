@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TeenBiz — Learn. Build. Grow.</title>
-    <meta name="description" content="TeenBiz helps young people learn business, develop skills and build real-world experience.">
+<title>UddoktaHon — Start Your Dropshipping Journey</title>
+<meta name="description" content="UddoktaHon helps entrepreneurs discover products and apply to start selling online.">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,18 +16,18 @@
 <header class="navbar">
 
     <a href="#home" class="logo">
-        Teen<span>Biz</span>
+        Uddokta<span>Hon</span>
     </a>
 
     <nav id="navMenu">
         <a href="#home">Home</a>
-        <a href="#learn">Learn</a>
-        <a href="#blog">Blog</a>
-        <a href="#about">About</a>
-        <a href="#join">Join Us</a>
+        <a href="#products">Products</a>
+        <a href="#how">How It Works</a>
+        <a href="#why">Why Us</a>
+        <a href="#faq">FAQ</a>
     </nav>
 
-    <a href="#join" class="nav-btn">Join Us</a>
+    <a href="#apply" class="nav-apply">Apply Now ↗</a>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
@@ -39,48 +39,47 @@
 
     <div class="hero-content">
 
-        <div class="badge">
-            🚀 Built for the Next Generation
+        <div class="hero-badge">
+            <span></span> Bangladesh's Entrepreneur Platform
         </div>
 
         <h1>
-            Learn Business.<br>
-            <span>Build Your Future.</span>
+            Find Products.<br>
+            <strong>Start Selling.</strong>
         </h1>
 
         <p>
-            A community where young people learn business,
-            develop valuable skills, work on real projects
-            and grow together.
+            Discover trending products, apply to become a seller
+            and build your own online business with UddoktaHon.
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#join" class="primary-btn">
-                Join Our Team →
+            <a href="#products" class="btn-primary">
+                Explore Products →
             </a>
 
-            <a href="#learn" class="secondary-btn">
-                Explore Learning
+            <a href="#how" class="btn-secondary">
+                How It Works
             </a>
 
         </div>
 
-        <div class="hero-stats">
+        <div class="trust-row">
 
             <div>
-                <strong>100+</strong>
-                <span>Learners</span>
+                <strong>500+</strong>
+                <span>Entrepreneurs</span>
             </div>
 
             <div>
-                <strong>20+</strong>
-                <span>Projects</span>
+                <strong>100+</strong>
+                <span>Products</span>
             </div>
 
             <div>
                 <strong>24/7</strong>
-                <span>Community</span>
+                <span>Support</span>
             </div>
 
         </div>
@@ -88,34 +87,58 @@
     </div>
 
 
-    <div class="hero-card">
+    <div class="hero-visual">
 
-        <div class="card-top">
-            <span>TEENBIZ</span>
-            <span>2026</span>
+        <div class="floating-card top-card">
+            <span class="mini-icon">📈</span>
+            <div>
+                <b>Growth Opportunity</b>
+                <small>Build your business</small>
+            </div>
         </div>
 
-        <div class="rocket">🚀</div>
 
-        <h2>
-            Your idea can become
-            something real.
-        </h2>
+        <div class="main-product-card">
 
-        <p>
-            Learn skills. Meet people.
-            Build projects. Create opportunities.
-        </p>
+            <div class="product-glow"></div>
 
-        <div class="progress-box">
-
-            <div class="progress-title">
-                <span>Business Journey</span>
-                <b>75%</b>
+            <div class="fake-product">
+                ⌚
             </div>
 
-            <div class="progress">
-                <div></div>
+            <div class="product-info">
+
+                <span class="tag">TRENDING</span>
+
+                <h3>Smart Watch Pro</h3>
+
+                <p>
+                    High-demand product opportunity
+                </p>
+
+                <div class="price-row">
+                    <div>
+                        <small>Potential Profit</small>
+                        <strong>৳300+</strong>
+                    </div>
+
+                    <button onclick="openApply('Smart Watch Pro')">
+                        Apply →
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card bottom-card">
+
+            <span class="check">✓</span>
+
+            <div>
+                <b>Application Open</b>
+                <small>Join the opportunity</small>
             </div>
 
         </div>
@@ -125,286 +148,492 @@
 </section>
 
 
-<!-- LEARN -->
-<section class="section" id="learn">
+<!-- PRODUCTS -->
+<section class="section" id="products">
 
-    <div class="section-heading">
+    <div class="section-title">
 
-        <span>WHAT WE TEACH</span>
+        <span>PRODUCT OPPORTUNITIES</span>
 
         <h2>
-            Skills that actually matter.
+            Products you can sell.
         </h2>
 
         <p>
-            Learn practical skills that can help you
-            understand business and the digital world.
+            Choose a product you are interested in and
+            submit an application to get started.
         </p>
 
     </div>
 
 
-    <div class="cards">
-
-        <div class="feature-card">
-            <div class="icon">💡</div>
-            <h3>Business Ideas</h3>
-            <p>
-                Discover simple business ideas and learn
-                how to turn ideas into real projects.
-            </p>
-        </div>
+    <div class="product-grid">
 
 
-        <div class="feature-card">
-            <div class="icon">📣</div>
-            <h3>Marketing</h3>
-            <p>
-                Learn branding, content creation,
-                social media and customer communication.
-            </p>
-        </div>
+        <!-- PRODUCT 1 -->
 
+        <article class="product-card">
 
-        <div class="feature-card">
-            <div class="icon">💻</div>
-            <h3>Digital Skills</h3>
-            <p>
-                Websites, design, online tools,
-                freelancing and other digital skills.
-            </p>
-        </div>
+            <div class="product-image blue-bg">
+                ⌚
 
-
-        <div class="feature-card">
-            <div class="icon">🤝</div>
-            <h3>Teamwork</h3>
-            <p>
-                Work with others, communicate better
-                and develop leadership skills.
-            </p>
-        </div>
-
-
-        <div class="feature-card">
-            <div class="icon">📈</div>
-            <h3>Growth</h3>
-            <p>
-                Understand customers, sales and
-                how businesses grow.
-            </p>
-        </div>
-
-
-        <div class="feature-card">
-            <div class="icon">🔥</div>
-            <h3>Real Experience</h3>
-            <p>
-                Learn by working on practical projects
-                instead of only studying theory.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-<section class="about-section" id="about">
-
-    <div class="about-content">
-
-        <span>ABOUT TEENBIZ</span>
-
-        <h2>
-            We believe age shouldn't
-            stop great ideas.
-        </h2>
-
-        <p>
-            TeenBiz is a youth-focused business community
-            designed to help young people understand business,
-            develop useful skills and gain real-world experience.
-        </p>
-
-        <p>
-            Our goal is simple:
-            <strong>Learn → Build → Grow.</strong>
-        </p>
-
-        <a href="#join" class="primary-btn">
-            Become a Member →
-        </a>
-
-    </div>
-
-    <div class="about-box">
-
-        <div class="about-number">01</div>
-
-        <h3>Learn</h3>
-
-        <p>
-            Understand business, marketing,
-            sales and digital skills.
-        </p>
-
-        <hr>
-
-        <div class="about-number">02</div>
-
-        <h3>Build</h3>
-
-        <p>
-            Work on practical projects
-            with your team.
-        </p>
-
-        <hr>
-
-        <div class="about-number">03</div>
-
-        <h3>Grow</h3>
-
-        <p>
-            Improve your skills and
-            create new opportunities.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- BLOG -->
-<section class="section blog-section" id="blog">
-
-    <div class="section-heading">
-
-        <span>OUR BLOG</span>
-
-        <h2>
-            Ideas worth reading.
-        </h2>
-
-        <p>
-            Business tips and lessons for the next generation.
-        </p>
-
-    </div>
-
-
-    <div class="blog-grid">
-
-        <article class="blog-card">
-
-            <div class="blog-image blue">
-                💼
+                <span class="sale-badge">
+                    TRENDING
+                </span>
             </div>
 
-            <div class="blog-content">
+            <div class="product-body">
 
-                <small>BUSINESS</small>
+                <div class="category">
+                    TECHNOLOGY
+                </div>
 
                 <h3>
-                    5 Business Ideas Young People Can Start
+                    Premium Smart Watch
                 </h3>
 
                 <p>
-                    Simple ideas to start learning
-                    entrepreneurship.
+                    A popular everyday tech product
+                    with strong online demand.
                 </p>
 
-                <a href="#">
-                    Read Article →
-                </a>
+                <div class="product-bottom">
+
+                    <div>
+                        <small>Potential Profit</small>
+                        <strong>৳300+</strong>
+                    </div>
+
+                    <button onclick="openApply('Premium Smart Watch')">
+                        Apply
+                    </button>
+
+                </div>
 
             </div>
 
         </article>
 
 
-        <article class="blog-card">
+        <!-- PRODUCT 2 -->
 
-            <div class="blog-image purple">
-                📱
+        <article class="product-card">
+
+            <div class="product-image purple-bg">
+                🎧
+
+                <span class="sale-badge">
+                    HOT
+                </span>
             </div>
 
-            <div class="blog-content">
+            <div class="product-body">
 
-                <small>MARKETING</small>
+                <div class="category">
+                    GADGETS
+                </div>
 
                 <h3>
-                    How Social Media Can Grow a Business
+                    Wireless Earbuds
                 </h3>
 
                 <p>
-                    Understand the basics of content
-                    and digital marketing.
+                    Compact and popular gadget suitable
+                    for social media selling.
                 </p>
 
-                <a href="#">
-                    Read Article →
-                </a>
+                <div class="product-bottom">
+
+                    <div>
+                        <small>Potential Profit</small>
+                        <strong>৳250+</strong>
+                    </div>
+
+                    <button onclick="openApply('Wireless Earbuds')">
+                        Apply
+                    </button>
+
+                </div>
 
             </div>
 
         </article>
 
 
-        <article class="blog-card">
+        <!-- PRODUCT 3 -->
 
-            <div class="blog-image green">
+        <article class="product-card">
+
+            <div class="product-image orange-bg">
+                🎒
+
+                <span class="sale-badge">
+                    NEW
+                </span>
+            </div>
+
+            <div class="product-body">
+
+                <div class="category">
+                    LIFESTYLE
+                </div>
+
+                <h3>
+                    Premium Travel Bag
+                </h3>
+
+                <p>
+                    A practical lifestyle product for
+                    online entrepreneurs.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div>
+                        <small>Potential Profit</small>
+                        <strong>৳400+</strong>
+                    </div>
+
+                    <button onclick="openApply('Premium Travel Bag')">
+                        Apply
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article class="product-card">
+
+            <div class="product-image green-bg">
+                💡
+
+                <span class="sale-badge">
+                    POPULAR
+                </span>
+            </div>
+
+            <div class="product-body">
+
+                <div class="category">
+                    HOME
+                </div>
+
+                <h3>
+                    Smart LED Light
+                </h3>
+
+                <p>
+                    A visually attractive product perfect
+                    for short-form content.
+                </p>
+
+                <div class="product-bottom">
+
+                    <div>
+                        <small>Potential Profit</small>
+                        <strong>৳220+</strong>
+                    </div>
+
+                    <button onclick="openApply('Smart LED Light')">
+                        Apply
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="how-section" id="how">
+
+    <div class="section-title">
+
+        <span>SIMPLE PROCESS</span>
+
+        <h2>
+            Start in 3 simple steps.
+        </h2>
+
+        <p>
+            No complicated checkout. Just choose,
+            apply and wait for our team.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+                🔎
+            </div>
+
+            <h3>
+                Choose a Product
+            </h3>
+
+            <p>
+                Explore our available products and
+                find an opportunity that interests you.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+                📝
+            </div>
+
+            <h3>
+                Submit Application
+            </h3>
+
+            <p>
+                Tell us about yourself and the product
+                you want to work with.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
                 🚀
             </div>
 
-            <div class="blog-content">
+            <h3>
+                Start Your Journey
+            </h3>
 
-                <small>STARTUP</small>
+            <p>
+                Our team reviews your application and
+                contacts you with the next steps.
+            </p>
 
-                <h3>
-                    From an Idea to Your First Customer
-                </h3>
-
-                <p>
-                    A beginner-friendly guide to
-                    starting a project.
-                </p>
-
-                <a href="#">
-                    Read Article →
-                </a>
-
-            </div>
-
-        </article>
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- JOIN -->
-<section class="join-section" id="join">
+<!-- WHY US -->
 
-    <div>
+<section class="why-section" id="why">
 
-        <span>READY?</span>
+    <div class="why-content">
+
+        <span>WHY UDDOKTAHON</span>
 
         <h2>
-            Build something
-            bigger with us.
+            Built for people who
+            want to become entrepreneurs.
         </h2>
 
         <p>
-            Join our community and start your
-            business journey today.
+            We make it easier to discover products and
+            opportunities without complicated systems.
         </p>
 
-        <a href="https://forms.google.com/" target="_blank">
-            🚀 Apply to Join
-        </a>
+        <div class="why-list">
+
+            <div>
+                <b>✓ Product Opportunities</b>
+                <small>Discover products selected for online selling.</small>
+            </div>
+
+            <div>
+                <b>✓ Simple Application</b>
+                <small>Apply without placing an order.</small>
+            </div>
+
+            <div>
+                <b>✓ Human Support</b>
+                <small>Our team reviews applications manually.</small>
+            </div>
+
+            <div>
+                <b>✓ Entrepreneur Community</b>
+                <small>Grow alongside other aspiring entrepreneurs.</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="why-box">
+
+        <div class="dashboard-top">
+            <span>UddoktaHon</span>
+            <span>Opportunity</span>
+        </div>
+
+        <div class="chart-area">
+
+            <div class="chart-line"></div>
+
+            <div class="chart-points">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+        <div class="chart-footer">
+
+            <div>
+                <small>Opportunity Score</small>
+                <strong>92%</strong>
+            </div>
+
+            <div>
+                <small>Status</small>
+                <strong class="open">OPEN</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section faq-section" id="faq">
+
+    <div class="section-title">
+
+        <span>FAQ</span>
+
+        <h2>
+            Frequently asked questions.
+        </h2>
+
+    </div>
+
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+                What is UddoktaHon?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                UddoktaHon is a platform where aspiring
+                entrepreneurs can discover product opportunities
+                and apply to work with them.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+                Do I place an order here?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                No. UddoktaHon is an application platform.
+                You submit an application instead of placing
+                a customer order.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+                How do I apply?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                Choose a product, click Apply and complete
+                the application form.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+                How will I be contacted?
+                <span>+</span>
+            </button>
+
+            <div class="faq-answer">
+                After reviewing your application, the
+                UddoktaHon team will contact you using
+                the information you provide.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="apply">
+
+    <div>
+
+        <span>YOUR NEXT STEP</span>
+
+        <h2>
+            Ready to become an entrepreneur?
+        </h2>
+
+        <p>
+            Choose a product and send your application.
+        </p>
+
+        <button onclick="openApply('General Application')">
+            🚀 Apply Now
+        </button>
 
     </div>
 
@@ -412,28 +641,176 @@
 
 
 <!-- FOOTER -->
+
 <footer>
 
     <div class="footer-logo">
-        Teen<span>Biz</span>
+        Uddokta<span>Hon</span>
     </div>
 
     <p>
-        Learn. Build. Grow. Together.
+        Discover. Apply. Build.
     </p>
 
     <div class="footer-links">
         <a href="#home">Home</a>
-        <a href="#learn">Learn</a>
-        <a href="#blog">Blog</a>
-        <a href="#join">Join</a>
+        <a href="#products">Products</a>
+        <a href="#how">How It Works</a>
+        <a href="#faq">FAQ</a>
     </div>
 
     <div class="copyright">
-        © 2026 TeenBiz. All rights reserved.
+        © 2026 UddoktaHon. All rights reserved.
     </div>
 
 </footer>
+
+
+<!-- APPLICATION MODAL -->
+
+<div class="modal" id="applyModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" onclick="closeApply()">
+            ×
+        </button>
+
+        <div class="modal-header">
+
+            <span>UDDOKTAHON APPLICATION</span>
+
+            <h2>
+                Apply to Sell
+            </h2>
+
+            <p>
+                Complete the form and our team will review
+                your application.
+            </p>
+
+        </div>
+
+
+        <form id="applicationForm" onsubmit="submitApplication(event)">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+
+            <label>
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+            >
+
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="01XXXXXXXXX"
+                required
+            >
+
+
+            <label>
+                District
+            </label>
+
+            <input
+                type="text"
+                id="district"
+                placeholder="Your district"
+                required
+            >
+
+
+            <label>
+                Product
+            </label>
+
+            <input
+                type="text"
+                id="selectedProduct"
+                readonly
+            >
+
+
+            <label>
+                Why do you want to join?
+            </label>
+
+            <textarea
+                id="message"
+                rows="4"
+                placeholder="Tell us briefly..."
+                required
+            ></textarea>
+
+
+            <button type="submit" class="submit-btn">
+                Submit Application →
+            </button>
+
+            <p class="form-note">
+                🔒 Your information will be used only
+                for application review.
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- SUCCESS MODAL -->
+
+<div class="success-modal" id="successModal">
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            Application Ready!
+        </h2>
+
+        <p>
+            Your application has been prepared.
+            Click below to continue.
+        </p>
+
+        <button onclick="sendEmail()">
+            Open Email →
+        </button>
+
+        <button class="back-btn" onclick="closeSuccess()">
+            Close
+        </button>
+
+    </div>
+
+</div>
 
 
 <script src="script.js"></script>
