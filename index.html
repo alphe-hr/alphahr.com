@@ -1,639 +1,1184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BanglaMemeX — বাংলা মিমের দুনিয়া</title>
 
-<title>UddoktaHon — Start Your Dropshipping Journey</title>
-<meta name="description" content="UddoktaHon helps entrepreneurs discover products and apply to start selling online.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
-<link rel="stylesheet" href="style.css">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Hind Siliguri','Poppins',sans-serif;
+    background:#080b12;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===============================
+   BACKGROUND
+================================ */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 10% 20%,rgba(0,255,170,.10),transparent 25%),
+        radial-gradient(circle at 90% 30%,rgba(120,80,255,.12),transparent 25%),
+        radial-gradient(circle at 50% 90%,rgba(255,80,150,.08),transparent 30%);
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(0,255,170,.05);
+    filter:blur(100px);
+    top:-150px;
+    right:-150px;
+    z-index:-4;
+    animation:floatBg 8s infinite alternate ease-in-out;
+}
+
+@keyframes floatBg{
+    from{transform:translate(0,0);}
+    to{transform:translate(-80px,100px);}
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:rgba(8,11,18,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-family:Poppins;
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#00f5a0;
+}
+
+.nav-links{
+    display:flex;
+    gap:7px;
+}
+
+.nav-links a{
+    color:#bfc6d4;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:10px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+    background:rgba(255,255,255,.08);
+}
+
+.menu-btn{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* ===============================
+   PAGE SYSTEM
+================================ */
+
+.page{
+    min-height:100vh;
+    padding:110px 7% 70px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    animation:pageIn .8s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero{
+    text-align:center;
+    align-items:center;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:7px 16px;
+    border:1px solid rgba(0,245,160,.3);
+    background:rgba(0,245,160,.08);
+    color:#00f5a0;
+    border-radius:50px;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{box-shadow:0 0 0 rgba(0,245,160,0);}
+    50%{box-shadow:0 0 25px rgba(0,245,160,.2);}
+}
+
+.hero h1{
+    font-family:Poppins;
+    font-size:clamp(45px,8vw,100px);
+    line-height:1;
+    font-weight:800;
+    max-width:1000px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#00f5a0,#00c3ff,#a66cff,#ff4f9a);
+    -webkit-background-clip:text;
+    color:transparent;
+    background-size:300%;
+    animation:gradientMove 5s infinite linear;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0%;}
+    100%{background-position:300%;}
+}
+
+.hero p{
+    max-width:650px;
+    margin:25px auto;
+    color:#aab2c2;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    border:0;
+    cursor:pointer;
+    text-decoration:none;
+    padding:13px 23px;
+    border-radius:13px;
+    background:#00f5a0;
+    color:#06100c;
+    font-weight:700;
+    transition:.3s;
+    margin:5px;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 15px 35px rgba(0,245,160,.18);
+}
+
+.btn.dark{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+/* ===============================
+   SECTION TITLE
+================================ */
+
+.section-title{
+    margin-bottom:35px;
+}
+
+.section-title small{
+    color:#00f5a0;
+    font-family:Poppins;
+    font-weight:600;
+}
+
+.section-title h2{
+    font-size:clamp(32px,5vw,55px);
+    margin-top:5px;
+}
+
+.section-title p{
+    color:#929baa;
+}
+
+/* ===============================
+   MEME GRID
+================================ */
+
+.meme-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.meme-card{
+    min-height:300px;
+    padding:25px;
+    border-radius:24px;
+    background:linear-gradient(145deg,#121722,#0d1119);
+    border:1px solid rgba(255,255,255,.08);
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.meme-card::before{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    background:#00f5a0;
+    filter:blur(80px);
+    opacity:.08;
+    right:-40px;
+    top:-40px;
+}
+
+.meme-card:hover{
+    transform:translateY(-10px) rotate(-1deg);
+    border-color:rgba(0,245,160,.3);
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.meme-img{
+    height:170px;
+    border-radius:17px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    margin-bottom:18px;
+    font-size:28px;
+    font-weight:800;
+    background:
+        linear-gradient(135deg,#202b3b,#111722);
+    position:relative;
+}
+
+.meme-img::after{
+    content:"😂";
+    position:absolute;
+    right:12px;
+    bottom:7px;
+    font-size:25px;
+}
+
+.meme-card h3{
+    font-size:21px;
+    margin-bottom:6px;
+}
+
+.meme-card p{
+    color:#8d96a7;
+    font-size:14px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:5px 10px;
+    background:rgba(0,245,160,.08);
+    color:#00f5a0;
+    border-radius:7px;
+    font-size:12px;
+}
+
+/* ===============================
+   TRENDING
+================================ */
+
+.trending{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:25px;
+}
+
+.trend-main{
+    min-height:450px;
+    border-radius:28px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    background:
+        linear-gradient(to top,rgba(0,0,0,.85),transparent),
+        linear-gradient(135deg,#38214d,#162c38);
+    transition:.4s;
+}
+
+.trend-main:hover{
+    transform:scale(1.015);
+}
+
+.trend-main h3{
+    font-size:42px;
+    max-width:650px;
+}
+
+.trend-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.trend-item{
+    padding:20px;
+    border-radius:18px;
+    background:#111621;
+    border:1px solid rgba(255,255,255,.07);
+    display:flex;
+    gap:15px;
+    align-items:center;
+    transition:.3s;
+}
+
+.trend-item:hover{
+    transform:translateX(8px);
+    border-color:#00f5a0;
+}
+
+.rank{
+    font-family:Poppins;
+    font-size:27px;
+    font-weight:800;
+    color:#00f5a0;
+}
+
+/* ===============================
+   CATEGORY
+================================ */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.category{
+    min-height:170px;
+    border-radius:22px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    background:#121722;
+    border:1px solid rgba(255,255,255,.07);
+    transition:.4s;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+    background:#18202d;
+}
+
+.category-icon{
+    font-size:45px;
+    margin-bottom:auto;
+}
+
+/* ===============================
+   QUOTE
+================================ */
+
+.quote-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    padding:60px 40px;
+    border-radius:30px;
+    background:linear-gradient(145deg,#141a26,#0d1118);
+    border:1px solid rgba(255,255,255,.08);
+    position:relative;
+}
+
+.quote-box::before{
+    content:"“";
+    position:absolute;
+    top:-35px;
+    left:30px;
+    font-size:150px;
+    color:#00f5a0;
+    opacity:.15;
+}
+
+.quote-box h2{
+    font-size:40px;
+}
+
+.quote-box p{
+    color:#9099a9;
+    margin-top:20px;
+}
+
+/* ===============================
+   MEME GENERATOR
+================================ */
+
+.generator{
+    max-width:850px;
+    width:100%;
+    margin:auto;
+    padding:35px;
+    border-radius:28px;
+    background:#111621;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.generator input,
+.generator textarea,
+.generator select{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.1);
+    outline:none;
+    background:#090d14;
+    color:#fff;
+    font-family:inherit;
+}
+
+.generator textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.preview{
+    min-height:250px;
+    margin:20px 0;
+    border-radius:20px;
+    background:linear-gradient(135deg,#29364a,#111721);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px;
+    text-align:center;
+    font-size:30px;
+    font-weight:800;
+    text-shadow:2px 2px 4px #000;
+}
+
+.preview div{
+    max-width:90%;
+}
+
+/* ===============================
+   ABOUT
+================================ */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.about-box{
+    padding:35px;
+    border-radius:25px;
+    background:#111621;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.about-box h3{
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.about-box p{
+    color:#929aaa;
+    line-height:1.8;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer{
+    padding:40px 7%;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#788191;
+}
+
+footer strong{
+    color:#00f5a0;
+}
+
+/* ===============================
+   FLOATING EMOJIS
+================================ */
+
+.emoji{
+    position:fixed;
+    font-size:30px;
+    opacity:.1;
+    pointer-events:none;
+    animation:emojiFloat 12s infinite linear;
+    z-index:-1;
+}
+
+.e1{left:10%;bottom:-50px;}
+.e2{left:30%;bottom:-80px;animation-delay:2s;}
+.e3{left:60%;bottom:-40px;animation-delay:4s;}
+.e4{left:85%;bottom:-70px;animation-delay:7s;}
+
+@keyframes emojiFloat{
+    from{
+        transform:translateY(0) rotate(0);
+    }
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+    }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        background:#090d14;
+        padding:15px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .meme-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trending{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .page{
+        padding:100px 5% 60px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .meme-grid{
+        grid-template-columns:1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trend-main{
+        padding:25px;
+    }
+
+    .trend-main h3{
+        font-size:30px;
+    }
+
+    .generator{
+        padding:20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar">
 
-    <a href="#home" class="logo">
-        Uddokta<span>Hon</span>
-    </a>
+<nav class="navbar">
 
-    <nav id="navMenu">
+    <div class="logo">
+        Bangla<span>MemeX</span> 😂
+    </div>
+
+    <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#how">How It Works</a>
-        <a href="#why">Why Us</a>
-        <a href="#faq">FAQ</a>
-    </nav>
-
-    <a href="#apply" class="nav-apply">Apply Now ↗</a>
-
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-</header>
-
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="hero-badge">
-            <span></span> Bangladesh's Entrepreneur Platform
-        </div>
-
-        <h1>
-            Find Products.<br>
-            <strong>Start Selling.</strong>
-        </h1>
-
-        <p>
-            Discover trending products, apply to become a seller
-            and build your own online business with UddoktaHon.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#products" class="btn-primary">
-                Explore Products →
-            </a>
-
-            <a href="#how" class="btn-secondary">
-                How It Works
-            </a>
-
-        </div>
-
-        <div class="trust-row">
-
-            <div>
-                <strong>500+</strong>
-                <span>Entrepreneurs</span>
-            </div>
-
-            <div>
-                <strong>100+</strong>
-                <span>Products</span>
-            </div>
-
-            <div>
-                <strong>24/7</strong>
-                <span>Support</span>
-            </div>
-
-        </div>
-
+        <a href="#trending">Trending</a>
+        <a href="#funny">Funny</a>
+        <a href="#school">School</a>
+        <a href="#relationship">Love</a>
+        <a href="#savage">Savage</a>
+        <a href="#gaming">Gaming</a>
+        <a href="#generator">Generator</a>
+        <a href="#about">About</a>
     </div>
 
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <div class="hero-visual">
-
-        <div class="floating-card top-card">
-            <span class="mini-icon">📈</span>
-            <div>
-                <b>Growth Opportunity</b>
-                <small>Build your business</small>
-            </div>
-        </div>
+</nav>
 
 
-        <div class="main-product-card">
+<!-- FLOATING EMOJIS -->
 
-            <div class="product-glow"></div>
-
-            <div class="fake-product">
-                ⌚
-            </div>
-
-            <div class="product-info">
-
-                <span class="tag">TRENDING</span>
-
-                <h3>Smart Watch Pro</h3>
-
-                <p>
-                    High-demand product opportunity
-                </p>
-
-                <div class="price-row">
-                    <div>
-                        <small>Potential Profit</small>
-                        <strong>৳300+</strong>
-                    </div>
-
-                    <button onclick="openApply('Smart Watch Pro')">
-                        Apply →
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
+<div class="emoji e1">😂</div>
+<div class="emoji e2">🤣</div>
+<div class="emoji e3">💀</div>
+<div class="emoji e4">🔥</div>
 
 
-        <div class="floating-card bottom-card">
+<!-- =====================================================
+     PAGE 1 — HOME
+===================================================== -->
 
-            <span class="check">✓</span>
+<section class="page hero" id="home">
 
-            <div>
-                <b>Application Open</b>
-                <small>Join the opportunity</small>
-            </div>
-
-        </div>
-
+    <div class="hero-badge">
+        🇧🇩 বাংলাদেশের মিমের নতুন ঠিকানা
     </div>
 
-</section>
-
-
-<!-- PRODUCTS -->
-<section class="section" id="products">
-
-    <div class="section-title">
-
-        <span>PRODUCT OPPORTUNITIES</span>
-
-        <h2>
-            Products you can sell.
-        </h2>
-
-        <p>
-            Choose a product you are interested in and
-            submit an application to get started.
-        </p>
-
-    </div>
-
-
-    <div class="product-grid">
-
-
-        <!-- PRODUCT 1 -->
-
-        <article class="product-card">
-
-            <div class="product-image blue-bg">
-                ⌚
-
-                <span class="sale-badge">
-                    TRENDING
-                </span>
-            </div>
-
-            <div class="product-body">
-
-                <div class="category">
-                    TECHNOLOGY
-                </div>
-
-                <h3>
-                    Premium Smart Watch
-                </h3>
-
-                <p>
-                    A popular everyday tech product
-                    with strong online demand.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div>
-                        <small>Potential Profit</small>
-                        <strong>৳300+</strong>
-                    </div>
-
-                    <button onclick="openApply('Premium Smart Watch')">
-                        Apply
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 2 -->
-
-        <article class="product-card">
-
-            <div class="product-image purple-bg">
-                🎧
-
-                <span class="sale-badge">
-                    HOT
-                </span>
-            </div>
-
-            <div class="product-body">
-
-                <div class="category">
-                    GADGETS
-                </div>
-
-                <h3>
-                    Wireless Earbuds
-                </h3>
-
-                <p>
-                    Compact and popular gadget suitable
-                    for social media selling.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div>
-                        <small>Potential Profit</small>
-                        <strong>৳250+</strong>
-                    </div>
-
-                    <button onclick="openApply('Wireless Earbuds')">
-                        Apply
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 3 -->
-
-        <article class="product-card">
-
-            <div class="product-image orange-bg">
-                🎒
-
-                <span class="sale-badge">
-                    NEW
-                </span>
-            </div>
-
-            <div class="product-body">
-
-                <div class="category">
-                    LIFESTYLE
-                </div>
-
-                <h3>
-                    Premium Travel Bag
-                </h3>
-
-                <p>
-                    A practical lifestyle product for
-                    online entrepreneurs.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div>
-                        <small>Potential Profit</small>
-                        <strong>৳400+</strong>
-                    </div>
-
-                    <button onclick="openApply('Premium Travel Bag')">
-                        Apply
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 4 -->
-
-        <article class="product-card">
-
-            <div class="product-image green-bg">
-                💡
-
-                <span class="sale-badge">
-                    POPULAR
-                </span>
-            </div>
-
-            <div class="product-body">
-
-                <div class="category">
-                    HOME
-                </div>
-
-                <h3>
-                    Smart LED Light
-                </h3>
-
-                <p>
-                    A visually attractive product perfect
-                    for short-form content.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div>
-                        <small>Potential Profit</small>
-                        <strong>৳220+</strong>
-                    </div>
-
-                    <button onclick="openApply('Smart LED Light')">
-                        Apply
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- HOW IT WORKS -->
-
-<section class="how-section" id="how">
-
-    <div class="section-title">
-
-        <span>SIMPLE PROCESS</span>
-
-        <h2>
-            Start in 3 simple steps.
-        </h2>
-
-        <p>
-            No complicated checkout. Just choose,
-            apply and wait for our team.
-        </p>
-
-    </div>
-
-
-    <div class="steps">
-
-        <div class="step">
-
-            <div class="step-number">
-                01
-            </div>
-
-            <div class="step-icon">
-                🔎
-            </div>
-
-            <h3>
-                Choose a Product
-            </h3>
-
-            <p>
-                Explore our available products and
-                find an opportunity that interests you.
-            </p>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">
-                02
-            </div>
-
-            <div class="step-icon">
-                📝
-            </div>
-
-            <h3>
-                Submit Application
-            </h3>
-
-            <p>
-                Tell us about yourself and the product
-                you want to work with.
-            </p>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">
-                03
-            </div>
-
-            <div class="step-icon">
-                🚀
-            </div>
-
-            <h3>
-                Start Your Journey
-            </h3>
-
-            <p>
-                Our team reviews your application and
-                contacts you with the next steps.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- WHY US -->
-
-<section class="why-section" id="why">
-
-    <div class="why-content">
-
-        <span>WHY UDDOKTAHON</span>
-
-        <h2>
-            Built for people who
-            want to become entrepreneurs.
-        </h2>
-
-        <p>
-            We make it easier to discover products and
-            opportunities without complicated systems.
-        </p>
-
-        <div class="why-list">
-
-            <div>
-                <b>✓ Product Opportunities</b>
-                <small>Discover products selected for online selling.</small>
-            </div>
-
-            <div>
-                <b>✓ Simple Application</b>
-                <small>Apply without placing an order.</small>
-            </div>
-
-            <div>
-                <b>✓ Human Support</b>
-                <small>Our team reviews applications manually.</small>
-            </div>
-
-            <div>
-                <b>✓ Entrepreneur Community</b>
-                <small>Grow alongside other aspiring entrepreneurs.</small>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="why-box">
-
-        <div class="dashboard-top">
-            <span>UddoktaHon</span>
-            <span>Opportunity</span>
-        </div>
-
-        <div class="chart-area">
-
-            <div class="chart-line"></div>
-
-            <div class="chart-points">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-        </div>
-
-        <div class="chart-footer">
-
-            <div>
-                <small>Opportunity Score</small>
-                <strong>92%</strong>
-            </div>
-
-            <div>
-                <small>Status</small>
-                <strong class="open">OPEN</strong>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FAQ -->
-
-<section class="section faq-section" id="faq">
-
-    <div class="section-title">
-
-        <span>FAQ</span>
-
-        <h2>
-            Frequently asked questions.
-        </h2>
-
-    </div>
-
-
-    <div class="faq-container">
-
-        <div class="faq-item">
-
-            <button onclick="toggleFAQ(this)">
-                What is UddoktaHon?
-                <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-                UddoktaHon is a platform where aspiring
-                entrepreneurs can discover product opportunities
-                and apply to work with them.
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button onclick="toggleFAQ(this)">
-                Do I place an order here?
-                <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-                No. UddoktaHon is an application platform.
-                You submit an application instead of placing
-                a customer order.
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button onclick="toggleFAQ(this)">
-                How do I apply?
-                <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-                Choose a product, click Apply and complete
-                the application form.
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button onclick="toggleFAQ(this)">
-                How will I be contacted?
-                <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-                After reviewing your application, the
-                UddoktaHon team will contact you using
-                the information you provide.
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="cta" id="apply">
+    <h1>
+        হাসতে থাকো,<br>
+        <span class="gradient">মিম দেখতে থাকো।</span>
+    </h1>
+
+    <p>
+        BanglaMemeX হলো বাংলা মিম, হাসির পোস্ট,
+        savage content আর daily entertainment-এর
+        একটা কাল্পনিক fun platform।
+    </p>
 
     <div>
+        <a class="btn" href="#trending">🔥 Trending দেখো</a>
+        <a class="btn dark" href="#generator">😂 Meme বানাও</a>
+    </div>
 
-        <span>YOUR NEXT STEP</span>
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 — TRENDING
+===================================================== -->
+
+<section class="page" id="trending">
+
+    <div class="section-title">
+        <small>PAGE 02 / TRENDING</small>
+        <h2>আজকের Trending 🔥</h2>
+        <p>যেগুলো এখন সবাই share করছে।</p>
+    </div>
+
+    <div class="trending">
+
+        <div class="trend-main">
+            <span class="tag">#Viral</span>
+
+            <h3>
+                মা যখন বলে — “তোর ফোনটা একটু দে তো...” 💀
+            </h3>
+
+            <p>
+                তারপর বুঝলাম ফোনটা আর আমার নেই।
+            </p>
+        </div>
+
+        <div class="trend-list">
+
+            <div class="trend-item">
+                <div class="rank">01</div>
+                <div>
+                    <b>Exam এর আগের রাত</b>
+                    <p>“কাল থেকে পড়বো।”</p>
+                </div>
+            </div>
+
+            <div class="trend-item">
+                <div class="rank">02</div>
+                <div>
+                    <b>বন্ধুর নতুন প্রেম</b>
+                    <p>“ভাই ২ মিনিট কথা বলি?”</p>
+                </div>
+            </div>
+
+            <div class="trend-item">
+                <div class="rank">03</div>
+                <div>
+                    <b>Salary আসার দিন</b>
+                    <p>আর ৩ দিন পর: 💀</p>
+                </div>
+            </div>
+
+            <div class="trend-item">
+                <div class="rank">04</div>
+                <div>
+                    <b>WiFi চলে গেলে</b>
+                    <p>“এই জীবন আর রাখবো না।”</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 — FUNNY
+===================================================== -->
+
+<section class="page" id="funny">
+
+    <div class="section-title">
+        <small>PAGE 03 / FUNNY</small>
+        <h2>হাসির মিম 😂</h2>
+        <p>মন খারাপ? এখানে ৫ মিনিট থাকো।</p>
+    </div>
+
+    <div class="meme-grid">
+
+        <div class="meme-card">
+            <div class="meme-img">
+                “ভাই কালকে পড়বো”
+            </div>
+            <h3>কাল নামের মানুষটা আসেই না!</h3>
+            <p>Every student ever.</p>
+            <span class="tag">#StudentLife</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                মা: কে ফোন করেছে?
+            </div>
+            <h3>আমার জীবনের FBI</h3>
+            <p>Privacy left the chat.</p>
+            <span class="tag">#Maa</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                1% Battery 🔋
+            </div>
+            <h3>এখনই জীবনের সব সত্য মনে পড়ে</h3>
+            <p>Charger কোথায় ভাই?</p>
+            <span class="tag">#Battery</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                “ভাই টাকা নাই”
+            </div>
+            <h3>তারপর Food Delivery</h3>
+            <p>Priorities 💀</p>
+            <span class="tag">#Food</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                WiFi: Connected
+            </div>
+            <h3>Internet: No Internet</h3>
+            <p>এই সম্পর্ক toxic.</p>
+            <span class="tag">#WiFi</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                Monday 😭
+            </div>
+            <h3>Sunday কোথায় গেল?</h3>
+            <p>সময় এত দ্রুত কেন?</p>
+            <span class="tag">#Monday</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 — SCHOOL
+===================================================== -->
+
+<section class="page" id="school">
+
+    <div class="section-title">
+        <small>PAGE 04 / SCHOOL</small>
+        <h2>Student Zone 📚</h2>
+        <p>স্কুল লাইফের কিছু universal সত্য।</p>
+    </div>
+
+    <div class="quote-box">
 
         <h2>
-            Ready to become an entrepreneur?
+            Teacher: “কালকে পরীক্ষা হবে না।”
         </h2>
 
         <p>
-            Choose a product and send your application.
+            Next day — “সবাই খাতা বের করো।” 💀
         </p>
 
-        <button onclick="openApply('General Application')">
-            🚀 Apply Now
+        <br>
+
+        <span class="tag">#SchoolMemes #Exam #Student</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 — RELATIONSHIP
+===================================================== -->
+
+<section class="page" id="relationship">
+
+    <div class="section-title">
+        <small>PAGE 05 / LOVE</small>
+        <h2>Love & Relationship ❤️</h2>
+        <p>Singleদের জন্য বিশেষ সতর্কতা।</p>
+    </div>
+
+    <div class="meme-grid">
+
+        <div class="meme-card">
+            <div class="meme-img">
+                “আমি রাগ করি নাই”
+            </div>
+            <h3>সবচেয়ে বিপজ্জনক বাক্য।</h3>
+            <p>Run. Just run.</p>
+            <span class="tag">#Relationship</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                Seen 2:37 PM
+            </div>
+            <h3>Reply আসবে...</h3>
+            <p>Last seen: 3 days ago 💀</p>
+            <span class="tag">#Seen</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                Single Life 😎
+            </div>
+            <h3>আমিই নিজের Green Flag</h3>
+            <p>নিজেকেই নিজে ভালোবাসি।</p>
+            <span class="tag">#Single</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 6 — SAVAGE
+===================================================== -->
+
+<section class="page" id="savage">
+
+    <div class="section-title">
+        <small>PAGE 06 / SAVAGE</small>
+        <h2>Savage Corner ☠️</h2>
+        <p>Warning: এখানে feelings hurt হতে পারে।</p>
+    </div>
+
+    <div class="quote-box">
+
+        <h2>
+            “তুই অনেক বদলে গেছিস।”
+        </h2>
+
+        <p>
+            “হ্যাঁ ভাই, Update আসছে। পুরোনো Version আর Support করে না।” 😭🔥
+        </p>
+
+        <br>
+
+        <span class="tag">#Savage #Update #Roast</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 7 — DESI
+===================================================== -->
+
+<section class="page">
+
+    <div class="section-title">
+        <small>PAGE 07 / DESI</small>
+        <h2>Desi Bangla 😂</h2>
+        <p>এইগুলা শুধু বাঙালিরাই বুঝবে।</p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category">
+            <div class="category-icon">🍚</div>
+            <h3>ভাত</h3>
+            <p>জাতীয় emotion.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🫖</div>
+            <h3>চা</h3>
+            <p>Problem এর permanent solution.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🦟</div>
+            <h3>মশা</h3>
+            <p>রাতের final boss.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🚦</div>
+            <h3>Traffic</h3>
+            <p>ঢাকার unofficial theme.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">👵</div>
+            <h3>আত্মীয়</h3>
+            <p>“পড়াশোনা কেমন?”</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">💸</div>
+            <h3>টাকা</h3>
+            <p>আসে, তারপর হারিয়ে যায়।</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🛺</div>
+            <h3>Rickshaw</h3>
+            <p>“ভাই ২০০ দিবেন।”</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🌧️</div>
+            <h3>বৃষ্টি</h3>
+            <p>School বন্ধের আশা।</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 8 — GAMING
+===================================================== -->
+
+<section class="page" id="gaming">
+
+    <div class="section-title">
+        <small>PAGE 08 / GAMING</small>
+        <h2>Gamer Zone 🎮</h2>
+        <p>“আরেকটা ম্যাচ” বলেই ৪ ঘণ্টা চলে গেল।</p>
+    </div>
+
+    <div class="meme-grid">
+
+        <div class="meme-card">
+            <div class="meme-img">
+                Team: FULL NOOB
+            </div>
+            <h3>আর আমাকে কেন?</h3>
+            <p>Ranked match pain.</p>
+            <span class="tag">#Gaming</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                Ping: 999
+            </div>
+            <h3>Player না, slideshow</h3>
+            <p>Internet moment.</p>
+            <span class="tag">#Lag</span>
+        </div>
+
+        <div class="meme-card">
+            <div class="meme-img">
+                “Last Match”
+            </div>
+            <h3>৩ ঘণ্টা পরে...</h3>
+            <p>Last match never ends.</p>
+            <span class="tag">#Gamer</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 9 — MEME GENERATOR
+===================================================== -->
+
+<section class="page" id="generator">
+
+    <div class="section-title">
+        <small>PAGE 09 / GENERATOR</small>
+        <h2>নিজের মিম বানাও 😂</h2>
+        <p>Text লিখে live meme preview দেখো।</p>
+    </div>
+
+    <div class="generator">
+
+        <input
+            id="topText"
+            type="text"
+            placeholder="উপরের লেখা লিখো..."
+            oninput="generateMeme()"
+        >
+
+        <textarea
+            id="bottomText"
+            placeholder="নিচের লেখা লিখো..."
+            oninput="generateMeme()"
+        ></textarea>
+
+        <select id="memeStyle" onchange="generateMeme()">
+            <option value="normal">Normal Meme</option>
+            <option value="school">School Meme</option>
+            <option value="gaming">Gaming Meme</option>
+            <option value="savage">Savage Meme</option>
+        </select>
+
+        <div class="preview" id="preview">
+
+            <div id="previewTop">
+                তোমার মিম এখানে আসবে 😂
+            </div>
+
+            <div id="previewBottom">
+                কিছু লিখে দেখো!
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="randomMeme()">
+            🎲 Random Meme
         </button>
+
+        <button class="btn dark" onclick="clearMeme()">
+            🗑️ Clear
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 10 — ABOUT
+===================================================== -->
+
+<section class="page" id="about">
+
+    <div class="section-title">
+        <small>PAGE 10 / ABOUT</small>
+        <h2>BanglaMemeX 🇧🇩</h2>
+        <p>বাংলা internet culture-এর fictional meme hub.</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-box">
+            <h3>😂 আমাদের উদ্দেশ্য</h3>
+
+            <p>
+                মানুষকে হাসানো, বাংলা meme culture-কে
+                সুন্দরভাবে তুলে ধরা এবং একটি modern
+                animated meme website experience তৈরি করা।
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <h3>🔥 এখানে কী আছে?</h3>
+
+            <p>
+                Trending memes, funny posts, school memes,
+                relationship jokes, savage content,
+                gaming memes এবং নিজের meme তৈরি করার
+                একটি ছোট generator।
+            </p>
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <div style="text-align:center">
+
+        <a href="#home" class="btn">
+            ↑ Back to Home
+        </a>
 
     </div>
 
@@ -644,176 +1189,231 @@
 
 <footer>
 
-    <div class="footer-logo">
-        Uddokta<span>Hon</span>
-    </div>
-
     <p>
-        Discover. Apply. Build.
+        © 2026 <strong>BanglaMemeX</strong> — Made for fun 🇧🇩😂
     </p>
 
-    <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#how">How It Works</a>
-        <a href="#faq">FAQ</a>
-    </div>
-
-    <div class="copyright">
-        © 2026 UddoktaHon. All rights reserved.
-    </div>
+    <p style="margin-top:8px">
+        No serious business here. Just memes.
+    </p>
 
 </footer>
 
 
-<!-- APPLICATION MODAL -->
+<script>
 
-<div class="modal" id="applyModal">
+/* ===============================
+   MOBILE MENU
+================================ */
 
-    <div class="modal-box">
+function toggleMenu(){
 
-        <button class="close-modal" onclick="closeApply()">
-            ×
-        </button>
+    const nav = document.getElementById("navLinks");
 
-        <div class="modal-header">
+    nav.classList.toggle("active");
 
-            <span>UDDOKTAHON APPLICATION</span>
-
-            <h2>
-                Apply to Sell
-            </h2>
-
-            <p>
-                Complete the form and our team will review
-                your application.
-            </p>
-
-        </div>
+}
 
 
-        <form id="applicationForm" onsubmit="submitApplication(event)">
+/* ===============================
+   CLOSE MENU WHEN CLICKING LINK
+================================ */
 
-            <label>
-                Full Name
-            </label>
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name"
-                required
-            >
+    link.addEventListener("click", () => {
 
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
 
-            <label>
-                Email Address
-            </label>
+    });
 
-            <input
-                type="email"
-                id="email"
-                placeholder="you@example.com"
-                required
-            >
+});
 
 
-            <label>
-                Phone Number
-            </label>
+/* ===============================
+   MEME GENERATOR
+================================ */
 
-            <input
-                type="tel"
-                id="phone"
-                placeholder="01XXXXXXXXX"
-                required
-            >
+function generateMeme(){
 
+    const top =
+        document.getElementById("topText").value;
 
-            <label>
-                District
-            </label>
+    const bottom =
+        document.getElementById("bottomText").value;
 
-            <input
-                type="text"
-                id="district"
-                placeholder="Your district"
-                required
-            >
+    const style =
+        document.getElementById("memeStyle").value;
 
+    const preview =
+        document.getElementById("preview");
 
-            <label>
-                Product
-            </label>
+    const topPreview =
+        document.getElementById("previewTop");
 
-            <input
-                type="text"
-                id="selectedProduct"
-                readonly
-            >
+    const bottomPreview =
+        document.getElementById("previewBottom");
 
 
-            <label>
-                Why do you want to join?
-            </label>
+    topPreview.innerText =
+        top || "তোমার মিম এখানে 😂";
 
-            <textarea
-                id="message"
-                rows="4"
-                placeholder="Tell us briefly..."
-                required
-            ></textarea>
+    bottomPreview.innerText =
+        bottom || "কিছু লিখে দেখো!";
 
 
-            <button type="submit" class="submit-btn">
-                Submit Application →
-            </button>
+    if(style === "school"){
 
-            <p class="form-note">
-                🔒 Your information will be used only
-                for application review.
-            </p>
+        preview.style.background =
+        "linear-gradient(135deg,#283b59,#101723)";
 
-        </form>
+    }
 
-    </div>
+    else if(style === "gaming"){
 
-</div>
+        preview.style.background =
+        "linear-gradient(135deg,#42215e,#10131e)";
 
+    }
 
-<!-- SUCCESS MODAL -->
+    else if(style === "savage"){
 
-<div class="success-modal" id="successModal">
+        preview.style.background =
+        "linear-gradient(135deg,#4a1725,#111217)";
 
-    <div class="success-box">
+    }
 
-        <div class="success-icon">
-            ✓
-        </div>
+    else{
 
-        <h2>
-            Application Ready!
-        </h2>
+        preview.style.background =
+        "linear-gradient(135deg,#29364a,#111721)";
 
-        <p>
-            Your application has been prepared.
-            Click below to continue.
-        </p>
+    }
 
-        <button onclick="sendEmail()">
-            Open Email →
-        </button>
-
-        <button class="back-btn" onclick="closeSuccess()">
-            Close
-        </button>
-
-    </div>
-
-</div>
+}
 
 
-<script src="script.js"></script>
+/* ===============================
+   RANDOM MEME
+================================ */
+
+function randomMeme(){
+
+    const memes = [
+
+        [
+            "ভাই কাল থেকে পড়বো",
+            "কাল আসলেই আবার কালকে পড়বো 💀"
+        ],
+
+        [
+            "মা: ফোনটা দে",
+            "আমি: জীবনটা নাও, ফোনটা না 😭"
+        ],
+
+        [
+            "Friend: ৫ মিনিটে আসছি",
+            "২ ঘণ্টা পর: কোথায় গেলি ভাই?"
+        ],
+
+        [
+            "WiFi: Connected",
+            "Internet: আমার কিছু যায় আসে না 😂"
+        ],
+
+        [
+            "Exam tomorrow",
+            "আজকে YouTube-এ পড়াশোনা শুরু করি 🤡"
+        ],
+
+        [
+            "Battery 1%",
+            "এখনই আমার জীবনের সব গুরুত্বপূর্ণ কাজ মনে পড়ে"
+        ]
+
+    ];
+
+    const random =
+        memes[Math.floor(Math.random()*memes.length)];
+
+    document.getElementById("topText").value =
+        random[0];
+
+    document.getElementById("bottomText").value =
+        random[1];
+
+    generateMeme();
+
+}
+
+
+/* ===============================
+   CLEAR
+================================ */
+
+function clearMeme(){
+
+    document.getElementById("topText").value = "";
+
+    document.getElementById("bottomText").value = "";
+
+    generateMeme();
+
+}
+
+
+/* ===============================
+   SCROLL REVEAL
+================================ */
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
+});
+
+
+document.querySelectorAll(
+".meme-card,.category,.trend-item,.about-box,.quote-box"
+).forEach(el=>{
+
+    el.style.opacity="0";
+
+    el.style.transform="translateY(30px)";
+
+    el.style.transition="opacity .7s ease, transform .7s ease";
+
+    observer.observe(el);
+
+});
+
+
+/* ===============================
+   CONSOLE
+================================ */
+
+console.log(
+"😂 BanglaMemeX loaded successfully!"
+);
+
+</script>
 
 </body>
 </html>
