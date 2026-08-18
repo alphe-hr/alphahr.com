@@ -1,221 +1,442 @@
-// ===============================
-// MOBILE MENU
-// ===============================
+/* =========================================
+   BANGLAMEMEX
+   MAIN JAVASCRIPT
+========================================= */
 
-function toggleMenu(){
 
-    const nav = document.getElementById("navMenu");
+/* ===============================
+   MOBILE MENU
+================================ */
+
+function toggleMenu() {
+
+    const nav =
+        document.getElementById("navLinks");
+
+    if (!nav) return;
 
     nav.classList.toggle("active");
 
 }
 
 
-// Close mobile menu after clicking
+/* ===============================
+   CLOSE MOBILE MENU
+================================ */
 
-document.querySelectorAll("#navMenu a").forEach(function(link){
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function (link) {
 
-    link.addEventListener("click", function(){
+        link.addEventListener(
+            "click",
+            function () {
 
-        document.getElementById("navMenu").classList.remove("active");
+                const nav =
+                    document.getElementById("navLinks");
+
+                if (nav) {
+                    nav.classList.remove("active");
+                }
+
+            }
+        );
 
     });
 
-});
+
+/* ===============================
+   MEME GENERATOR
+================================ */
+
+function generateMeme() {
+
+    const top =
+        document.getElementById("topText");
+
+    const bottom =
+        document.getElementById("bottomText");
+
+    const style =
+        document.getElementById("memeStyle");
+
+    const preview =
+        document.getElementById("preview");
+
+    const topPreview =
+        document.getElementById("previewTop");
+
+    const bottomPreview =
+        document.getElementById("previewBottom");
 
 
-// ===============================
-// APPLICATION MODAL
-// ===============================
-
-function openApply(product){
-
-    const modal = document.getElementById("applyModal");
-
-    const productInput =
-        document.getElementById("selectedProduct");
-
-    productInput.value = product;
-
-    modal.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-}
+    if (
+        !top ||
+        !bottom ||
+        !preview ||
+        !topPreview ||
+        !bottomPreview
+    ) {
+        return;
+    }
 
 
-function closeApply(){
-
-    document.getElementById("applyModal")
-        .classList.remove("active");
-
-    document.body.style.overflow = "";
-
-}
+    topPreview.innerText =
+        top.value ||
+        "তোমার মিম এখানে 😂";
 
 
-// Close modal when clicking outside
+    bottomPreview.innerText =
+        bottom.value ||
+        "কিছু লিখে দেখো!";
 
-document.getElementById("applyModal")
-    .addEventListener("click", function(e){
 
-        if(e.target === this){
+    if (style) {
 
-            closeApply();
+        if (style.value === "school") {
+
+            preview.style.background =
+                "linear-gradient(135deg,#283b59,#101723)";
 
         }
 
-    });
+        else if (style.value === "gaming") {
 
+            preview.style.background =
+                "linear-gradient(135deg,#42215e,#10131e)";
 
-// ===============================
-// APPLICATION
-// ===============================
+        }
 
-let applicationData = {};
+        else if (style.value === "savage") {
 
+            preview.style.background =
+                "linear-gradient(135deg,#4a1725,#111217)";
 
-function submitApplication(event){
+        }
 
-    event.preventDefault();
+        else {
 
+            preview.style.background =
+                "linear-gradient(135deg,#29364a,#111721)";
 
-    applicationData = {
-
-        name:
-            document.getElementById("name").value,
-
-        email:
-            document.getElementById("email").value,
-
-        phone:
-            document.getElementById("phone").value,
-
-        district:
-            document.getElementById("district").value,
-
-        product:
-            document.getElementById("selectedProduct").value,
-
-        message:
-            document.getElementById("message").value
-
-    };
-
-
-    closeApply();
-
-    document.getElementById("successModal")
-        .classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-// ===============================
-// OPEN EMAIL
-// ===============================
-
-function sendEmail(){
-
-    /*
-    CHANGE THIS EMAIL
-    TO YOUR REAL UDDOKTAHON EMAIL
-    */
-
-    const receiver =
-        "YOUR-EMAIL@gmail.com";
-
-
-    const subject =
-        "New UddoktaHon Application - " +
-        applicationData.product;
-
-
-    const body =
-`UDDOKTAHON APPLICATION
-
-Name:
-${applicationData.name}
-
-Email:
-${applicationData.email}
-
-Phone:
-${applicationData.phone}
-
-District:
-${applicationData.district}
-
-Product:
-${applicationData.product}
-
-Why do you want to join?
-${applicationData.message}
-`;
-
-
-    const gmailURL =
-        "https://mail.google.com/mail/?view=cm" +
-        "&fs=1" +
-        "&to=" + encodeURIComponent(receiver) +
-        "&su=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-
-    window.open(gmailURL, "_blank");
-
-}
-
-
-function closeSuccess(){
-
-    document.getElementById("successModal")
-        .classList.remove("active");
-
-    document.body.style.overflow = "";
-
-}
-
-
-// ===============================
-// FAQ
-// ===============================
-
-function toggleFAQ(button){
-
-    const item = button.parentElement;
-
-    item.classList.toggle("open");
-
-
-    const icon = button.querySelector("span");
-
-    if(item.classList.contains("open")){
-
-        icon.textContent = "−";
-
-    }else{
-
-        icon.textContent = "+";
+        }
 
     }
 
 }
 
 
-// ===============================
-// CLOSE SUCCESS MODAL OUTSIDE
-// ===============================
+/* ===============================
+   RANDOM MEMES
+================================ */
 
-document.getElementById("successModal")
-    .addEventListener("click", function(e){
+function randomMeme() {
 
-        if(e.target === this){
+    const memes = [
 
-            closeSuccess();
+        [
+            "ভাই কাল থেকে পড়বো",
+            "কাল আসলেই আবার কালকে পড়বো 💀"
+        ],
 
+        [
+            "মা: ফোনটা দে",
+            "আমি: জীবনটা নাও, ফোনটা না 😭"
+        ],
+
+        [
+            "Friend: ৫ মিনিটে আসছি",
+            "২ ঘণ্টা পর: কোথায় গেলি ভাই?"
+        ],
+
+        [
+            "WiFi: Connected",
+            "Internet: আমার কিছু যায় আসে না 😂"
+        ],
+
+        [
+            "Exam tomorrow",
+            "আজকে YouTube-এ পড়াশোনা শুরু করি 🤡"
+        ],
+
+        [
+            "Battery 1%",
+            "এখনই আমার জীবনের সব গুরুত্বপূর্ণ কাজ মনে পড়ে"
+        ],
+
+        [
+            "Salary এসেছে",
+            "৩ দিন পরে: ভাই ২০০ টাকা ধার দিবি? 💀"
+        ]
+
+    ];
+
+
+    const random =
+        memes[
+            Math.floor(
+                Math.random() *
+                memes.length
+            )
+        ];
+
+
+    const top =
+        document.getElementById("topText");
+
+    const bottom =
+        document.getElementById("bottomText");
+
+
+    if (!top || !bottom) return;
+
+
+    top.value = random[0];
+
+    bottom.value = random[1];
+
+
+    generateMeme();
+
+}
+
+
+/* ===============================
+   CLEAR MEME
+================================ */
+
+function clearMeme() {
+
+    const top =
+        document.getElementById("topText");
+
+    const bottom =
+        document.getElementById("bottomText");
+
+
+    if (top) top.value = "";
+
+    if (bottom) bottom.value = "";
+
+
+    generateMeme();
+
+}
+
+
+/* ===============================
+   SCROLL REVEAL
+================================ */
+
+const observer =
+    new IntersectionObserver(
+
+        function (entries) {
+
+            entries.forEach(
+                function (entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.12
         }
 
-    });
+    );
+
+
+/* ===============================
+   ADD REVEAL CLASS
+================================ */
+
+document
+    .querySelectorAll(
+        ".meme-card, .category, .trend-item, .about-box, .quote-box"
+    )
+    .forEach(
+        function (element) {
+
+            element.classList.add(
+                "reveal"
+            );
+
+            observer.observe(element);
+
+        }
+    );
+
+
+/* ===============================
+   ACTIVE NAV LINK
+================================ */
+
+const sections =
+    document.querySelectorAll(
+        "section[id]"
+    );
+
+const navLinks =
+    document.querySelectorAll(
+        ".nav-links a"
+    );
+
+
+window.addEventListener(
+    "scroll",
+    function () {
+
+        let current = "";
+
+
+        sections.forEach(
+            function (section) {
+
+                const sectionTop =
+                    section.offsetTop - 150;
+
+                if (
+                    window.scrollY >=
+                    sectionTop
+                ) {
+
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
+
+                }
+
+            }
+        );
+
+
+        navLinks.forEach(
+            function (link) {
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute(
+                        "href"
+                    ) === "#" + current
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* ===============================
+   RANDOM EMOJI BACKGROUND
+================================ */
+
+const emojis = [
+    "😂",
+    "🤣",
+    "💀",
+    "🔥",
+    "😭",
+    "🤡",
+    "😎",
+    "🇧🇩"
+];
+
+
+function createFloatingEmoji() {
+
+    const emoji =
+        document.createElement("div");
+
+
+    emoji.className =
+        "emoji";
+
+
+    emoji.innerText =
+        emojis[
+            Math.floor(
+                Math.random() *
+                emojis.length
+            )
+        ];
+
+
+    emoji.style.left =
+        Math.random() * 100 + "%";
+
+
+    emoji.style.bottom =
+        "-60px";
+
+
+    emoji.style.animationDuration =
+        (8 + Math.random() * 8) + "s";
+
+
+    emoji.style.fontSize =
+        (20 + Math.random() * 25) + "px";
+
+
+    document.body.appendChild(
+        emoji
+    );
+
+
+    setTimeout(
+        function () {
+
+            emoji.remove();
+
+        },
+        17000
+    );
+
+}
+
+
+setInterval(
+    createFloatingEmoji,
+    1800
+);
+
+
+/* ===============================
+   PAGE LOADED
+================================ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        generateMeme();
+
+        console.log(
+            "😂 BanglaMemeX loaded successfully!"
+        );
+
+    }
+);
